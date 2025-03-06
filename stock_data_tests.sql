@@ -110,7 +110,7 @@ WHERE
   stock_value <=0
   OR stock_value IS NULL
 
-------------------------------
+------------------------
 
 SELECT
   CONCAT(t.model,"_",t.color,"_",IFNULL(t.size,"no-size")) AS product_id,
