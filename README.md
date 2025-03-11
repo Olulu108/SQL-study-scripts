@@ -1,9 +1,8 @@
 ## 📂 Repository Structure  
 
-/ ├── queries/ # Folder containing SQL queries
-
-|--- primary_key_checks.sql
-
+/ 
+├── queries/ # Folder containing SQL queries
+│ ├──primary_key_checks.sql
 │ ├── joins_analysis.sql
 │ ├── data_aggregation.sql
 │ ├── campaign_metrics.sql
