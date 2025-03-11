@@ -1,4 +1,4 @@
------------------------------- Aggregate gwz_sales_17 on the orders_id and date_date columns and join edgwz_orders and gwz_ship_17 on orders_id, using a WITH AS clause to perform this operation in one query.  ------------------------------ 
+------------------------------Aggregate gwz_sales_17 on the orders_id and date_date columns and join edgwz_orders and gwz_ship_17 on orders_id, using a WITH AS clause to perform this operation in one query.
 
 WITH sales_subquerry AS (
   SELECT
@@ -23,7 +23,7 @@ USING (orders_id)
 
 
 
------------------------------- Join the tables gwz_orders_join and gwz_campaign_17 to include ads cost in our financial report, using a WITH AS clause to perform this operation in one query (aggregate gwz_orders_join on date_date in a subquery using the WITH AS clause, aggregate gwz_campaign_17 on date_date using a second WITH AS clause, join orders_date and campaign_date on date_date to aggregate all order and ad statistics for each day)  ------------------------------ 
+------------------------------Join the tables gwz_orders_join and gwz_campaign_17 to include ads cost in our financial report, using a WITH AS clause to perform this operation in one query (aggregate gwz_orders_join on date_date in a subquery using the WITH AS clause, aggregate gwz_campaign_17 on date_date using a second WITH AS clause, join orders_date and campaign_date on date_date to aggregate all order and ad statistics for each day)
 
 WITH orders_join_subquerry AS (
   SELECT
@@ -61,7 +61,7 @@ ORDER BY date_date
 
 
 
------------------------------- Use the WITH AS clause to perform following operations in one query: calculate sales margin metrics - margin, margin_percent, margin_level (margin_percent based on the margin and the turnover). Calculate the promo_value based on turnover_before_promo and turnover, calculate the promo_percent based on the promo_value and the turnover, add a promo_type column based on the values in promo_percent (high, low, medium). ------------------------------ 
+------------------------------ Use the WITH AS clause to calculate sales margin metrics - margin, margin_percent, margin_level (margin_percent based on the margin and the turnover). Calculate the promo_value based on turnover_before_promo and turnover, calculate the promo_percent based on the promo_value and the turnover, add a promo_type column based on the values in promo_percent (high, low, medium)
 
 WITH
   sales1_subquery AS (
@@ -115,7 +115,7 @@ FROM sales1_subquery AS sales1
 JOIN sales2_subquery AS sales2
 USING (orders_id, products_id)
 
------------------------------
+
 
 
 

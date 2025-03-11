@@ -1,4 +1,4 @@
------------------------------- check if product_id is a primary key in the circle_stock_cat table.
+------------------------------check if product_id is a primary key in the circle_stock_cat table.
 
 SELECT
   product_id,
@@ -12,7 +12,7 @@ HAVING
 
 
 
------------------------------- check if the combination of model, color, and size columns serves as a primary key for the circle_stock table
+------------------------------check if the combination of model, color, and size columns serves as a primary key for the circle_stock table
 
 SELECT
   CONCAT(model_id, color, size),
@@ -110,7 +110,7 @@ WHERE
   stock_value <=0
   OR stock_value IS NULL
 
-------------------------
+------------------------------
 
 SELECT
   CONCAT(t.model,"_",t.color,"_",IFNULL(t.size,"no-size")) AS product_id,

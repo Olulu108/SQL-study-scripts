@@ -65,8 +65,9 @@ FULL OUTER JOIN
 USING
   (session_id)
 ------------------------------1902868
-
 ------------------------------Save the results of the INNER JOIN query in a gz_orders_ga table.
+
+
 
 
 ------------------------------Use UNION ALL to combine  4 different tables with campaign information (according to different data sources) into a single table named gz_campaign. 
@@ -108,6 +109,9 @@ FROM
 GROUP BY
   date_date,
   campaign_key
+
+
+
 
 ------------------------------ primary key test for the table called gz_campaign_orders_pk
 SELECT  
