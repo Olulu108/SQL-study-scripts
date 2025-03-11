@@ -1,7 +1,7 @@
 #### sql queries for small traning projects
 
-/
-├── queries/                # Folder containing SQL queries
+
+├── queries/                
 │   ├── primary_key_checks.sql
 │   ├── joins_analysis.sql
 │   ├── data_aggregation.sql
@@ -10,4 +10,4 @@
 │   ├── functions.sql
 │   ├── financial_reports.sql
 │   └── promotions_analysis.sql
-├── README.md               # Documentation file (this file)
+├── README.md              
