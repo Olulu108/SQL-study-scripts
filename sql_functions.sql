@@ -11,7 +11,6 @@ CREATE FUNCTION
 
 
 
-
 ------------------------------create the mail_be column using the new is_mail_be function
 
 SELECT
@@ -19,7 +18,6 @@ SELECT
   `qualified-root-302819.course17.is_mail_be`(journey_name) AS mail_be,
 FROM
   `qualified-root-302819.course17.gwz_mail_17`
-
 
 
 
@@ -41,7 +39,6 @@ CREATE FUNCTION
 
 
 
-
 ------------------------------add a mail_type column to the gwz_mail_17 table by using the mail_type function
 
 SELECT
@@ -49,8 +46,6 @@ SELECT
   `qualified-root-302819.course17.mail_type`(journey_name) AS mail_type,
 FROM
   `qualified-root-302819.course17.gwz_mail_17`
-
-
 
 
 
@@ -78,7 +73,6 @@ FROM
 
 
 
-
 ------------------------------Create an nps function in the course17 dataset that takes global_note as an input and returns the same values as the nps column created in the step above
 
 CREATE FUNCTION
@@ -89,3 +83,56 @@ CREATE FUNCTION
       ELSE 0
   END
     )
+
+
+
+------------------------------Select all the columns from the gwz_nps_17 table and add an nps column to the results by using the nps function you created.
+
+SELECT
+    date_date,
+    orders_id,
+    transporter,
+    global_note,
+`qualified-root-302819.course17.nps`(global_note)AS nps
+FROM `qualified-root-302819.course17.gwz_nps_17`
+
+
+
+
+
+
+------------------------------Create a transporter_brand function in the course17 dataset that takes the transporter column as an input and returns Chrono or DPD transporter brand
+
+CREATE FUNCTION
+  course17.transporter_brand (transporter STRING) AS(
+    CASE
+      WHEN transporter LIKE "%Chrono%" THEN "Chrono"
+      ELSE "DPD"
+  END
+    )
+
+
+
+------------------------------Create a delivery_mode function in the course17 dataset that takes the transporter column as an input and returns Pickup point or Home delivery modes
+
+CREATE FUNCTION
+  course17.delivery_mode (transporter STRING) AS(
+    CASE
+      WHEN transporter LIKE "%Pickup%" THEN "Pickup point delivery"
+      ELSE "Home delivery"
+  END
+    )
+
+
+
+------------------------------Select all the columns from the gwz_nps_17 table and add the nps, delivery_mode, and transporter_brand columns to it using the new functions you created.
+
+SELECT
+  date_date,
+  orders_id,
+  transporter,
+  global_note,
+  `qualified-root-302819.course17.transporter_brand`(transporter) AS transporter_brand,
+  `qualified-root-302819.course17.delivery_mode`(transporter) AS delivery_mode
+FROM
+  `qualified-root-302819.course17.gwz_nps_17`
