@@ -14,6 +14,13 @@
 ├── README.md # Documentation file (this file)
 
 
+unbreakable/
+├── config/                  # Simulation model run configuration files
+├── data/                    # Data directory
+│   ├── generated/           # Generated data, e.g., pre-computed reconstruction rates 
+│   ├── processed/           # Processed data used as an input into simulation model
+│   └── raw/                 # Raw data
+├── data_preparation/        # Data preprocessing notebooks
 
 
 .
