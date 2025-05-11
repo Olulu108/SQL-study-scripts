@@ -1,7 +1,7 @@
 # SQL-study-scripts
 A collection of scripts covering both basic and advanced SQL queries.
 
-## What Queries Are Covered?? 
+## What Queries Are Covered?
 This repository contains a collection of SQL queries used for data validation, aggregation, transformation, and analysis. The queries primarily focus on:
 - **Primary Key Validation**: Ensuring uniqueness in key fields.
 - **Joins & Data Merging**: Combining data from multiple tables.
